@@ -1,0 +1,24 @@
+<!-- child.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Child Window</title>
+	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</head>
+<body>
+	<!-- Use it like any other HTML element --> 
+	<model-viewer src="" ar environment-image="" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+	<script>
+		// Get the URL parameters from the parent page
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+
+		// Set the model and HDR image URLs in the model-viewer element
+		const modelUrl = urlParams.get('model');
+		const hdrUrl = urlParams.get('hdr');
+		const modelViewer = document.querySelector('model-viewer');
+		modelViewer.src = modelUrl;
+		modelViewer.environmentImage = hdrUrl;
+	</script>
+</body>
+</html>
