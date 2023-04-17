@@ -9,15 +9,18 @@
 		}
 		iframe {
 			width: 800px;
-      			height: 600px;
+      		height: 600px;
 		}
 	</style>
 </head>
 <body>
-	<h1>Parent Window</h1>
-	<iframe src="model_viewer.html?
-		     model=shared-assets/models/Kontorhus_binary.glb&
-		     hdr=shared-assets/environments/industrial_sunset_puresky_1k.hdr">
-	</iframe>
+	<h1>Hello World!</h1>
+	<!-- Assign the model and HDR image URLs to variables for readability -->
+	<script>
+		const modelUrl = 'shared-assets/models/Kontorhus_binary.glb';
+		const hdrUrl = 'shared-assets/environments/industrial_sunset_puresky_1k.hdr';
+	</script>
+	<!-- Pass the URLs as query parameters to the child HTML file -->
+	<iframe src="model_viewer.html?model=${modelUrl}&hdr=${hdrUrl}"></iframe>
 </body>
 </html>
